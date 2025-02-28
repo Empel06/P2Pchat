@@ -172,16 +172,20 @@ void PeerNetwork::join_network(char* ip, char* port){
     	//addr.s_addr = htonl(ipList[i]); // Ensure network byte order
 		addr.s_addr = ipList[i]; // Ensure network byte order
 		std::string convip = inet_ntoa(addr);
+		std::cout << "Checking " << convip << std::endl;
 
 		//Check if ip is is client list
 		int client_in_list = 0;
 		for(int j=0;j<this->clients.size();j++){
+			std::cout << " ???    = " << this->clients[j].getIp() << std::endl;
 			if(this->clients[j].getIp()==convip){
+				std::cout << "Yes, skipping !" << std::endl;
 				client_in_list = 1;
 				break;
 			}
 		}
 		if(client_in_list == 0){
+			std::cout << "Unknown ip ! connect this please" << std::endl;
 			try{
 				this->join_network((char*)(convip.c_str()),port);
 			} catch(int err){
