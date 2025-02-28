@@ -176,7 +176,7 @@ void PeerNetwork::join_network(char* ip, char* port){
 		//Check if ip is is client list
 		int client_in_list = 0;
 		for(int j=0;j<this->clients.size();j++){
-			if(this->clients[i].getIp()==convip){
+			if(this->clients[j].getIp()==convip){
 				client_in_list = 1;
 				break;
 			}
