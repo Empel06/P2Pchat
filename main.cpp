@@ -58,8 +58,8 @@ int main(){
     
 
     while(1){
-        //network.listClients();
-        //network.debugPrint();
+        network.listClients();
+        network.debugPrint();
         // Sleep(10000);
         std::string msg;
         std::getline(std::cin,msg);
